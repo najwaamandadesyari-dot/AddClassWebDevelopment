@@ -1,0 +1,1820 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff7fa">
+    <meta name="description" content="Frendvel.Food - Kue custom dan makanan lezat untuk momen spesialmu.">
+    <title>Frendvel.Food | Sweet Moments, Made Special</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --pink: #f4a9c5;
+            --pink-dark: #d96391;
+            --pink-light: #fff0f6;
+            --black: #211b20;
+            --white: #ffffff;
+            --cream: #fff9fb;
+            --gray: #777078;
+            --border: #f0e4e9;
+            --shadow: 0 12px 35px rgba(65, 29, 45, 0.07);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 35px;
+        }
+
+        .eyebrow {
+            color: var(--pink-dark);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(28px, 4vw, 39px);
+            line-height: 1.2;
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--pink-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-pink {
+            background: var(--pink);
+            color: var(--black);
+        }
+
+        .btn-pink:hover {
+            background: #f7bdd2;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border-color: var(--border);
+            background: var(--white);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--pink-dark);
+            color: var(--pink-dark);
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            min-height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .brand-name {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-name span {
+            color: var(--pink-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 600;
+            color: #5c5359;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink-dark);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 25px;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 65px 0 70px;
+            background:
+                radial-gradient(ellipse at 5% 10%, #fff0f6 0, transparent 38%),
+                radial-gradient(ellipse at 95% 90%, #ffe7f0 0, transparent 30%),
+                var(--cream);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .hero-copy .eyebrow {
+            display: inline-block;
+            padding: 7px 12px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(39px, 5vw, 62px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            margin: 22px 0 18px;
+        }
+
+        .hero h1 span {
+            color: var(--pink-dark);
+        }
+
+        .hero-copy > p {
+            max-width: 450px;
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-note {
+            margin-top: 25px;
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image {
+            height: 420px;
+            border-radius: 170px 170px 18px 18px;
+            object-position: center;
+            box-shadow: var(--shadow);
+        }
+
+        .floating-note {
+            position: absolute;
+            left: -25px;
+            bottom: 25px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 14px 18px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            font-size: 12px;
+        }
+
+        .floating-note strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .floating-note span {
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 25px;
+            right: -15px;
+            background: var(--pink);
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            font-family: "Playfair Display", serif;
+            font-size: 13px;
+            line-height: 1.25;
+            transform: rotate(9deg);
+        }
+
+        /* QUICK LINKS */
+
+        .quick-links {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .quick-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 15px;
+            transition: 0.2s;
+        }
+
+        .quick-card:hover {
+            border-color: var(--pink);
+            background: var(--pink-light);
+        }
+
+        .quick-icon {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: var(--pink-light);
+            font-size: 17px;
+            flex-shrink: 0;
+        }
+
+        .quick-card strong {
+            display: block;
+            font-size: 12px;
+        }
+
+        .quick-card span {
+            display: block;
+            color: var(--gray);
+            font-size: 10px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 360px;
+            border-radius: 14px;
+            object-position: center;
+        }
+
+        .about-copy h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 37px;
+            line-height: 1.25;
+            margin: 12px 0 17px;
+        }
+
+        .about-copy p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .about-points {
+            display: grid;
+            gap: 10px;
+            margin: 22px 0;
+        }
+
+        .about-point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .check {
+            width: 23px;
+            height: 23px;
+            background: var(--pink-light);
+            color: var(--pink-dark);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+        }
+
+        /* CATALOG */
+
+        .catalog {
+            background: var(--cream);
+        }
+
+        .catalog-tools {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 24px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 330px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 14px 12px 40px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            font-size: 12px;
+        }
+
+        .search-box input:focus {
+            border-color: var(--pink-dark);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .filters {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 9px 14px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.25s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .product-image-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image {
+            height: 235px;
+            transition: transform 0.35s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.04);
+        }
+
+        .product-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--white);
+            padding: 5px 10px;
+            border-radius: 30px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .product-content {
+            padding: 17px;
+        }
+
+        .product-category {
+            color: var(--pink-dark);
+            text-transform: uppercase;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .product-content h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 20px;
+            margin: 5px 0;
+        }
+
+        .product-description {
+            color: var(--gray);
+            font-size: 11px;
+            min-height: 36px;
+            line-height: 1.6;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-top: 17px;
+            padding-top: 13px;
+            border-top: 1px solid var(--border);
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .order-btn {
+            padding: 9px 12px;
+            border: none;
+            border-radius: 7px;
+            background: var(--pink-light);
+            color: var(--black);
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .order-btn:hover {
+            background: var(--pink);
+        }
+
+        .empty-state {
+            display: none;
+            padding: 40px 10px;
+            text-align: center;
+            color: var(--gray);
+            font-size: 13px;
+            grid-column: 1 / -1;
+        }
+
+        /* CUSTOM ORDER */
+
+        .custom-section {
+            padding: 75px 0;
+        }
+
+        .custom-box {
+            background: var(--black);
+            color: var(--white);
+            border-radius: 18px;
+            padding: 45px;
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .custom-copy .eyebrow {
+            color: var(--pink);
+        }
+
+        .custom-copy h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        .custom-copy p {
+            color: #c9c0c7;
+            font-size: 13px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .custom-form {
+            display: grid;
+            gap: 13px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 11px;
+            color: #eee5eb;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: #302831;
+            color: var(--white);
+            border: 1px solid #4a3c47;
+            border-radius: 7px;
+            padding: 11px 12px;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--pink);
+        }
+
+        .form-group select option {
+            background: var(--black);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 75px;
+        }
+
+        .custom-form .btn {
+            width: 100%;
+            margin-top: 3px;
+        }
+
+        /* SOCIAL AND FOOTER */
+
+        .social-section {
+            text-align: center;
+            background: var(--pink-light);
+        }
+
+        .social-section h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            margin: 10px 0;
+        }
+
+        .social-section p {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .social-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        footer {
+            padding: 25px 0;
+            background: var(--white);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-inner p {
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        .footer-brand {
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .footer-brand span {
+            color: var(--pink-dark);
+        }
+
+        /* FLOATING WHATSAPP */
+
+        .floating-wa {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 90;
+            background: #25d366;
+            color: #102819;
+            border: 2px solid var(--white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            padding: 13px 17px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .floating-wa:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 13px;
+            }
+
+            .hero-grid {
+                gap: 30px;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            .quick-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .catalog-tools {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .search-box {
+                max-width: none;
+            }
+
+            .custom-box {
+                padding: 30px;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+
+            .section {
+                padding: 55px 0;
+            }
+
+            .nav-inner {
+                min-height: 64px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 64px;
+                padding: 18px 5%;
+                background: var(--white);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 12px 0;
+            }
+
+            .hero {
+                padding: 45px 0 55px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-copy > p {
+                font-size: 13px;
+            }
+
+            .hero-visual {
+                width: 90%;
+                margin: auto;
+            }
+
+            .hero-image {
+                height: 350px;
+                border-radius: 130px 130px 15px 15px;
+            }
+
+            .floating-note {
+                left: -15px;
+                bottom: 18px;
+            }
+
+            .hero-badge {
+                right: -15px;
+                width: 72px;
+                height: 72px;
+            }
+
+            .quick-grid {
+                gap: 9px;
+            }
+
+            .quick-card {
+                padding: 11px;
+                gap: 8px;
+            }
+
+            .quick-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .quick-card strong {
+                font-size: 11px;
+            }
+
+            .quick-card span {
+                font-size: 9px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .about-copy h2 {
+                font-size: 32px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .product-image {
+                height: 155px;
+            }
+
+            .product-content {
+                padding: 11px;
+            }
+
+            .product-content h3 {
+                font-size: 16px;
+            }
+
+            .product-description {
+                font-size: 10px;
+                min-height: 48px;
+            }
+
+            .product-price {
+                font-size: 11px;
+            }
+
+            .product-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 9px;
+            }
+
+            .order-btn {
+                width: 100%;
+            }
+
+            .filter-btn {
+                padding: 8px 11px;
+            }
+
+            .custom-section {
+                padding: 50px 0;
+            }
+
+            .custom-box {
+                padding: 24px 18px;
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .social-section h2 {
+                font-size: 29px;
+            }
+
+            .footer-inner {
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .floating-wa {
+                right: 13px;
+                bottom: 13px;
+                padding: 11px 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-inner">
+
+            <a href="#home" class="brand">
+                <img class="brand-mark"
+                     src="image/pp9.jpeg"
+                     alt="Logo Frendvel.Food">
+                <div class="brand-name">Frendvel<span>.Food</span></div>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle"
+                    aria-label="Buka menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <nav aria-label="Navigasi utama">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#catalog">Katalog</a></li>
+                    <li><a href="#custom">Pesan Custom</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn-primary nav-cta"
+               href="#catalog">Lihat Produk ↗</a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+                    <span class="eyebrow">♡ Made with love</span>
+
+                    <h1>
+                        Sweet moments,<br>
+                        <span>made special.</span>
+                    </h1>
+
+                    <p>
+                        Selamat datang di Frendvel.Food!
+                        Temukan aneka kue dan makanan lezat untuk
+                        merayakan momen spesial, berbagi kebahagiaan,
+                        atau sekadar memanjakan diri.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#catalog" class="btn btn-primary">
+                            Jelajahi Menu ↗
+                        </a>
+
+                        <a href="#custom" class="btn btn-outline">
+                            Pesan Kue Custom
+                        </a>
+                    </div>
+
+                    <p class="hero-note">
+                        ✦ Dibuat untuk melengkapi momen spesialmu.
+                    </p>
+                </div>
+
+                <div class="hero-visual">
+                    <img
+                        class="hero-image"
+                        src="image/hh.jpeg"
+                        alt="Kue ulang tahun butterfly Frendvel.Food"
+                    >
+
+                    <div class="floating-note">
+                        <strong>Made with love ♡</strong>
+                        <span>Manis di setiap momen</span>
+                    </div>
+
+                    <div class="hero-badge">
+                        Sweet<br>treats<br>for you ♡
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- LINK CEPAT -->
+        <section class="quick-links">
+            <div class="container quick-grid">
+
+                <a href="#catalog" class="quick-card">
+                    <div class="quick-icon">🎂</div>
+                    <div>
+                        <strong>Kue Custom</strong>
+                        <span>Rayakan momen spesial</span>
+                    </div>
+                </a>
+
+                <a href="#catalog" class="quick-card">
+                    <div class="quick-icon">🍫</div>
+                    <div>
+                        <strong>Camilan Manis</strong>
+                        <span>Teman santai favorit</span>
+                    </div>
+                </a>
+
+                <a href="#catalog" class="quick-card">
+                    <div class="quick-icon">🍰</div>
+                    <div>
+                        <strong>Aneka Dessert</strong>
+                        <span>Manis dan menggoda</span>
+                    </div>
+                </a>
+
+                <a href="#contact" class="quick-card">
+                    <div class="quick-icon">💌</div>
+                    <div>
+                        <strong>Hubungi Kami</strong>
+                        <span>Konsultasi pesanan</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- TENTANG KAMI -->
+        <section class="section" id="about">
+            <div class="container about-grid">
+
+                <div>
+                    <img
+                        class="about-image"
+                        src="image/rr.jpeg"
+                        alt="Kue cokelat Frendvel.Food"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="about-copy">
+                    <span class="eyebrow">Kenali kami</span>
+
+                    <h2>Setiap gigitan punya cerita.</h2>
+
+                    <p>
+                        Frendvel.Food hadir untuk menemani hari-hari
+                        istimewamu melalui aneka kue dan makanan yang
+                        menggugah selera.
+                    </p>
+
+                    <p>
+                        Mulai dari kue ulang tahun custom hingga camilan
+                        favorit, kamu bisa menemukan pilihan yang sesuai
+                        dengan selera dan kebutuhanmu.
+                    </p>
+
+                    <div class="about-points">
+                        <div class="about-point">
+                            <span class="check">✓</span>
+                            Pilihan produk yang beragam
+                        </div>
+
+                        <div class="about-point">
+                            <span class="check">✓</span>
+                            Desain kue dapat dikonsultasikan
+                        </div>
+
+                        <div class="about-point">
+                            <span class="check">✓</span>
+                            Pemesanan praktis melalui WhatsApp
+                        </div>
+                    </div>
+
+                    <a href="#catalog" class="btn btn-primary">
+                        Temukan Favoritmu ↗
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- KATALOG PRODUK -->
+        <section class="section catalog" id="catalog">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">Our menu</span>
+                    <h2>Temukan favoritmu.</h2>
+                    <p>
+                        Dari kue ulang tahun hingga camilan manis,
+                        pilih yang paling kamu suka.
+                    </p>
+                </div>
+
+                <div class="catalog-tools">
+
+                    <div class="search-box">
+                        <span class="search-icon">⌕</span>
+                        <input
+                            type="search"
+                            id="search-input"
+                            placeholder="Cari kue atau makanan..."
+                            aria-label="Cari produk"
+                        >
+                    </div>
+
+                    <div class="filters" aria-label="Filter kategori">
+                        <button class="filter-btn active"
+                                data-category="semua">Semua</button>
+
+                        <button class="filter-btn"
+                                data-category="kue">Kue</button>
+
+                        <button class="filter-btn"
+                                data-category="dessert">Dessert</button>
+
+                        <button class="filter-btn"
+                                data-category="camilan">Camilan</button>
+
+                        <button class="filter-btn"
+                                data-category="makanan">Makanan</button>
+                    </div>
+
+                </div>
+
+                <div class="product-grid" id="product-grid">
+
+                    <!-- PRODUK 1 -->
+                    <article class="product-card"
+                             data-category="kue"
+                             data-name="kue ulang tahun pink">
+
+                        <div class="product-image-wrap">
+                            <img
+                                class="product-image"
+                                src="image/12.jpeg"
+                                alt="Kue ulang tahun pink"
+                                loading="lazy"
+                            >
+                            <span class="product-label">Favorit</span>
+                        </div>
+
+                        <div class="product-content">
+                            <span class="product-category">Kue custom</span>
+                            <h3>Kue Ulang Tahun</h3>
+                            <p class="product-description">
+                                Kue spesial untuk ulang tahun dan momen berkesan.
+                            </p>
+
+                            <div class="product-bottom">
+                                <span class="product-price">Rp150.000</span>
+                                <button class="order-btn"
+                                        data-product="Kue Ulang Tahun">
+                                    Pesan ↗
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- PRODUK 2 -->
+                    <article class="product-card"
+                             data-category="kue"
+                             data-name="red velvet cake">
+
+                        <div class="product-image-wrap">
+                            <img
+                                class="product-image"
+                                src="image/rr.jpeg"
+                                alt="Red velvet cake"
+                                loading="lazy"
+                            >
+                            <span class="product-label">Red Velvet</span>
+                        </div>
+
+                        <div class="product-content">
+                            <span class="product-category">Kue</span>
+                            <h3>Red Velvet Cake</h3>
+                            <p class="product-description">
+                                Kue red velvet lembut untuk momen spesial.
+                            </p>
+
+                            <div class="product-bottom">
+                                <span class="product-price">Rp125.000</span>
+                                <button class="order-btn"
+                                        data-product="Red Velvet Cake">
+                                    Pesan ↗
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- PRODUK 3 -->
+                    <article class="product-card"
+                             data-category="dessert"
+                             data-name="cupcake">
+
+                        <div class="product-image-wrap">
+                            <img
+                                class="product-image"
+                                src="image/14.jpeg"
+                                alt="Bolu gulung cokelat"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-content">
+                            <span class="product-category">Dessert</span>
+                            <h3>Cupcake</h3>
+                            <p class="product-description">
+                                Cupcake mungil untuk hadiah atau camilan.
+                            </p>
+
+                            <div class="product-bottom">
+                                <span class="product-price">Rp15.000</span>
+                                <button class="order-btn"
+                                        data-product="Cupcake">
+                                    Pesan ↗
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- PRODUK 4 -->
+                    <article class="product-card"
+                             data-category="dessert"
+                             data-name="brownies cokelat">
+
+                        <div class="product-image-wrap">
+                            <img
+                                class="product-image"
+                                src="image/13.jpeg"
+                                alt="Kue cokelat dekorasi"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-content">
+                            <span class="product-category">Dessert</span>
+                            <h3>Brownies Cokelat</h3>
+                            <p class="product-description">
+                                Brownies lembut dengan cita rasa cokelat.
+                            </p>
+
+                            <div class="product-bottom">
+                                <span class="product-price">Rp45.000</span>
+                                <button class="order-btn"
+                                        data-product="Brownies Cokelat">
+                                    Pesan ↗
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- PRODUK 5 -->
+                    <article class="product-card"
+                             data-category="camilan"
+                             data-name="roti sosis">
+
+                        <div class="product-image-wrap">
+                            <img
+                                class="product-image"
+                                src="image/gg.jpeg"
+                                alt="Roti sosis"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-content">
+                            <span class="product-category">Camilan</span>
+                            <h3>Roti Sosis</h3>
+                            <p class="product-description">
+                                Roti lembut dengan isian sosis dan taburan keju.
+                            </p>
+
+                            <div class="product-bottom">
+                                <span class="product-price">Rp7.000</span>
+                                <button class="order-btn"
+                                        data-product="Roti Sosis">
+                                    Pesan ↗
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- PRODUK 6 -->
+                    <article class="product-card"
+                             data-category="camilan"
+                             data-name="roti abon keju">
+
+                        <div class="product-image-wrap">
+                            <img
+                                class="product-image"
+                                src="image/yy.jpeg"
+                                alt="Roti abon keju"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-content">
+                            <span class="product-category">Camilan</span>
+                            <h3>Roti Abon Keju</h3>
+                            <p class="product-description">
+                                Roti gurih dengan taburan abon dan keju.
+                            </p>
+
+                            <div class="product-bottom">
+                                <span class="product-price">Rp8.000</span>
+                                <button class="order-btn"
+                                        data-product="Roti Abon Keju">
+                                    Pesan ↗
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- PRODUK 7 -->
+                    <article class="product-card"
+                             data-category="makanan"
+                             data-name="tumpeng nasi">
+
+                        <div class="product-image-wrap">
+                            <img
+                                class="product-image"
+                                src="image/15.jpeg"
+                                alt="Tumpeng nasi dengan aneka lauk"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-content">
+                            <span class="product-category">Makanan</span>
+                            <h3>Tumpeng Nasi</h3>
+                            <p class="product-description">
+                                Tumpeng nasi lengkap dengan aneka lauk untuk acara spesial.
+                            </p>
+
+                            <div class="product-bottom">
+                                <span class="product-price">Rp100.000–Rp200.000</span>
+                                <button class="order-btn"
+                                        data-product="Tumpeng Nasi">
+                                    Pesan ↗
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <div class="empty-state" id="empty-state">
+                        Produk tidak ditemukan. Coba kata kunci lain, ya.
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PESAN KUE CUSTOM -->
+        <section class="custom-section" id="custom">
+            <div class="container">
+
+                <div class="custom-box">
+
+                    <div class="custom-copy">
+                        <span class="eyebrow">Made just for you</span>
+
+                        <h2>Punya desain kue impian?</h2>
+
+                        <p>
+                            Ingin kue dengan tema, warna, tulisan, atau
+                            dekorasi tertentu? Isi formulir ini untuk
+                            memulai konsultasi pesanan custom melalui
+                            WhatsApp.
+                        </p>
+
+                        <p>
+                            <strong>Catatan:</strong> Harga dan ketersediaan
+                            pesanan custom perlu dikonfirmasi dengan penjual.
+                        </p>
+                    </div>
+
+                    <form class="custom-form" id="custom-form">
+
+                        <div class="form-group">
+                            <label for="customer-name">Nama kamu</label>
+                            <input
+                                type="text"
+                                id="customer-name"
+                                placeholder="Masukkan nama"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cake-type">Jenis pesanan</label>
+                            <select id="cake-type" required>
+                                <option value="">Pilih jenis pesanan</option>
+                                <option>Kue ulang tahun custom</option>
+                                <option>Kue cokelat</option>
+                                <option>Dessert dan brownies</option>
+                                <option>Camilan</option>
+                                <option>Pesanan makanan lainnya</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-date">Tanggal dibutuhkan</label>
+                            <input
+                                type="date"
+                                id="event-date"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cake-notes">
+                                Tema, ukuran, jumlah, dan catatan
+                            </label>
+                            <textarea
+                                id="cake-notes"
+                                placeholder="Contoh: tema pink, tulisan Happy Birthday, ukuran..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button class="btn btn-pink" type="submit">
+                            Kirim Pesanan ke WhatsApp ↗
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- KONTAK DAN MEDIA SOSIAL -->
+        <section class="section social-section" id="contact">
+            <div class="container">
+
+                <span class="eyebrow">Let's connect</span>
+                <h2>Yuk, pesan favoritmu!</h2>
+
+                <p>
+                    Punya pertanyaan tentang menu atau ingin konsultasi
+                    pesanan? Hubungi Frendvel.Food.
+                </p>
+
+                <div class="social-actions">
+
+                    <a class="btn btn-primary"
+                       id="contact-wa"
+                       href="https://wa.me/6282225558040"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        💬 WhatsApp
+                    </a>
+
+                    <a class="btn btn-outline"
+                       id="contact-instagram"
+                       href="https://www.instagram.com/frendvel.food/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        ◎ Instagram
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                Frendvel<span>.Food</span> ♡
+            </div>
+
+            <p>
+                © <span id="year"></span> Frendvel.Food.
+                Sweet moments, made special.
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!-- TOMBOL WHATSAPP MELAYANG -->
+    <a href="https://wa.me/6282225558040"
+       class="floating-wa"
+       id="floating-wa"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Hubungi Frendvel.Food via WhatsApp">
+        ☎ Pesan Sekarang
+    </a>
+
+
+    <script>
+        // =========================================
+        // PENGATURAN TOKO
+        // Nomor WhatsApp dan Instagram toko
+        // =========================================
+
+        const STORE = {
+            // Gunakan kode negara tanpa tanda + atau spasi.
+            whatsapp: "6282225558040",
+
+            instagram: "https://www.instagram.com/frendvel.food/"
+        };
+
+
+        // =========================================
+        // MEMBUKA WHATSAPP
+        // =========================================
+
+        function orderWhatsApp(message) {
+            const phone = STORE.whatsapp.replace(/\D/g, "");
+
+            if (!phone) {
+                alert(
+                    "Nomor WhatsApp Frendvel.Food belum diatur di bagian STORE."
+                );
+                return;
+            }
+
+            const url =
+                "https://wa.me/" + phone +
+                "?text=" + encodeURIComponent(message);
+
+            window.open(url, "_blank", "noopener,noreferrer");
+        }
+
+
+        // =========================================
+        // TOMBOL PESAN SETIAP PRODUK
+        // =========================================
+
+        document.querySelectorAll(".order-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const product = this.dataset.product;
+
+                const message =
+                    "Halo Frendvel.Food! 👋\n\n" +
+                    "Saya ingin memesan:\n" +
+                    "Produk: " + product + "\n\n" +
+                    "Mohon informasi ketersediaan, harga terbaru, " +
+                    "dan cara pemesanannya. Terima kasih!";
+
+                orderWhatsApp(message);
+            });
+        });
+
+
+        // =========================================
+        // FILTER KATEGORI DAN PENCARIAN
+        // =========================================
+
+        const searchInput = document.getElementById("search-input");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const products = document.querySelectorAll(".product-card");
+        const emptyState = document.getElementById("empty-state");
+
+        let activeCategory = "semua";
+
+        function filterProducts() {
+            const keyword = searchInput.value
+                .trim()
+                .toLowerCase();
+
+            let visibleCount = 0;
+
+            products.forEach(product => {
+                const category = product.dataset.category;
+                const name = product.dataset.name.toLowerCase();
+                const text = product.textContent.toLowerCase();
+
+                const matchesCategory =
+                    activeCategory === "semua" ||
+                    category === activeCategory;
+
+                const matchesSearch =
+                    name.includes(keyword) ||
+                    text.includes(keyword);
+
+                const visible =
+                    matchesCategory && matchesSearch;
+
+                product.style.display = visible ? "" : "none";
+
+                if (visible) {
+                    visibleCount++;
+                }
+            });
+
+            emptyState.style.display =
+                visibleCount === 0 ? "block" : "none";
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                activeCategory = this.dataset.category;
+
+                filterButtons.forEach(item => {
+                    item.classList.toggle(
+                        "active",
+                        item === this
+                    );
+                });
+
+                filterProducts();
+            });
+        });
+
+        searchInput.addEventListener("input", filterProducts);
+
+
+        // =========================================
+        // FORM PESANAN KUE CUSTOM
+        // =========================================
+
+        const dateInput = document.getElementById("event-date");
+
+        // Tanggal pesanan tidak boleh di masa lalu.
+        const today = new Date();
+        const localToday = [
+            today.getFullYear(),
+            String(today.getMonth() + 1).padStart(2, "0"),
+            String(today.getDate()).padStart(2, "0")
+        ].join("-");
+
+        dateInput.min = localToday;
+
+        document.getElementById("custom-form")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById("customer-name")
+                    .value.trim();
+
+                const type = document.getElementById("cake-type")
+                    .value;
+
+                const date = dateInput.value;
+
+                const notes = document.getElementById("cake-notes")
+                    .value.trim();
+
+                if (!name || !type || !date || !notes) {
+                    alert("Mohon lengkapi semua data pesanan.");
+                    return;
+                }
+
+                if (date < localToday) {
+                    alert("Tanggal pesanan tidak boleh di masa lalu.");
+                    return;
+                }
+
+                const formattedDate = new Date(
+                    date + "T00:00:00"
+                ).toLocaleDateString("id-ID", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                });
+
+                const message =
+                    "Halo Frendvel.Food! 👋\n\n" +
+                    "Saya ingin konsultasi pesanan custom.\n\n" +
+                    "Nama: " + name + "\n" +
+                    "Jenis pesanan: " + type + "\n" +
+                    "Tanggal dibutuhkan: " + formattedDate + "\n" +
+                    "Detail pesanan: " + notes + "\n\n" +
+                    "Mohon informasi harga dan ketersediaannya. " +
+                    "Terima kasih!";
+
+                orderWhatsApp(message);
+            });
+
+
+        // =========================================
+        // MENU MOBILE
+        // =========================================
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+
+        // =========================================
+        // LINK KONTAK DAN TAHUN FOOTER
+        // =========================================
+
+        const whatsappBase = "https://wa.me/" +
+            STORE.whatsapp.replace(/\D/g, "");
+
+        document.getElementById("contact-wa").href = whatsappBase;
+        document.getElementById("floating-wa").href = whatsappBase;
+
+        document.getElementById("contact-instagram").href =
+            STORE.instagram;
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
